@@ -39,8 +39,14 @@ export const jogos = connection.define('jogos', {
     timestamps: false
 })
 
-function iniTable() {
-    jogos.async()
+//function iniTable() {
+  //  jogos.async()
+//}
+
+//iniTable()
+
+const initTable = async () => {
+    await jogos.sync()
 }
 
-iniTable()
+initTable();

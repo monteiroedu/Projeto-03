@@ -1,6 +1,6 @@
-import req from 'express/lib/request'
+//import req from 'express/lib/request'
 import { connection } from '../database/connection.js'
-import { jogos } from './model/jogos.js'
+import { jogos } from '../model/jogos.js'
  
 export const getIndex = async (req, res) => {
     try {
