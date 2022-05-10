@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style.css">
+    <title> Detalhes </title>
+</head>
+<body>
+    <%- include('./partials/header.ejs') %> 
+    <main> 
+        <div id="sub_header">  
+            <%= jogosDetalhes.nome %> 
+        </div>
+        <section id="details_container">
+            <iframe <%= jogosDetalhes.iframe %> ></iframe>
+            <table> 
+                <thead>
+                    <th colspan="2"> Detalhes </th>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td> Deenvolvido </td>
+                        <td> <%= jogosDetalhes.desenvolvido %>  </td>
+                    </tr>
+                    <tr>
+                        <td> Ano </td>
+                        <td> <%= jogosDetalhes.ano %>  </td>
+                    </tr>
+                    <tr>
+                        <td> Plataforma </td>
+                        <td> <%= jogosDetalhes.plataforma %>  </td>
+                    </tr>
+                </tbody>
+            </table>
+        
+       
+        </section> 
+    </main>
+    <%- include('./partials/footer.ejs') %> 
+</body>
+</html>
