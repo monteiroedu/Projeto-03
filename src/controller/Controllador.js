@@ -44,14 +44,17 @@ export const getCriar = (req, res) => {
 }
 
 export const postCriar = async (req, res) => {
-    const { nome, ano, desenvolvido, plataforma, img, iframe } = req.body
+    
     try {
-        if(!nome || !ano || !desenvolvido || !plataforma || !img || !iframe) {
-            res.send('Todos os campos são obrigatórios!')
-        } else {
-                 await jogos.create({nome, ano, desenvolvido, plataforma, img, iframe})
-         res.redirect('/')
-        }
+        const { nome, desenvolvido, plataforma, img, iframe } = req.body
+        // if(!nome || !desenvolvido || !plataforma || !img || !iframe) {
+        //     res.send('Todos os campos são obrigatórios!')
+        // } else {
+        //          await jogos.create({nome, desenvolvido, plataforma, img, iframe})
+        //  res.redirect('/')
+        // }
+        await jogos.create({nome, desenvolvido, plataforma, img, iframe})
+          res.render('criar.ejs')
     }
     catch(error){
         res.send(error.message)
@@ -72,10 +75,9 @@ export const getEditar = async (req, res) => {
 
 export const postEditar = async (req, res) => {
    try {
-       const { nome, ano, desenvolvido, plataforma, img, iframe } = req.body
+       const { nome, desenvolvido, plataforma, img, iframe } = req.body
        await jogos.update({
            nome: nome,
-           ano: ano,
            desenvolvido: desenvolvido,
            plataforma: plataforma,
            img: img,

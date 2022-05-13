@@ -10,27 +10,23 @@ export const jogos = connection.define('jogos', {
     }, 
     nome: {
         type: Sequelize.STRING,
-        allowNull: false
+       //allowNull: false
     }, 
-    ano: {
-        type: Sequelize.STRING,
-        allowNull: false
-    },
     desenvolvido: {
         type: Sequelize.STRING,
-        allowNull: false
+       // allowNull: false
     }, 
     plataforma: {
         type: Sequelize.STRING,
-        allowNull: false
+       // allowNull: false
     },
     img: {
         type: Sequelize.STRING,
-        allowNull: false
+      //  allowNull: false
     },
     iframe: {
         type: Sequelize.STRING,
-        allowNull: false
+      //  allowNull: false
     }
 }, {
     feezeTableName: true,
@@ -50,3 +46,14 @@ const initTable = async () => {
 }
 
 initTable();
+
+// const initTable = async () => {
+//     try {
+//         await jogos.sync()
+//     }
+//     catch(error){
+//         return error.message
+//     }
+// }
+
+// initTable();
